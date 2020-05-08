@@ -1,0 +1,9 @@
+<!--pages/db/db.wxml-->
+<button bindtap="add">添加数据</button>
+<button bindtap="test">查询数据</button>
+<button bindtap="delect">删除数据</button>
+<button bindtap="updata">更新数据</button>
+
+
+<button bindtap="qiuhe">云函数获取加法</button>
+

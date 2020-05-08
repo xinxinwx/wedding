@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<!-- <loading loadingState="{{loadingState}}" bindreload="reload" wx:if="{{loadingState != 1}}"></loading> -->
+<loading wx:if="{{loadingState != 1}}">
+    加载中...
+</loading>
+<view wx:else>
+  <wave></wave>
+  <view class='title'>{{title}}</view>
+  <image src="{{imguri}}" class="logo" mode="aspectFit"></image>
+  <view class='button' bindtap='jumpIndexPage'>进入甜蜜婚礼</view>
+</view>

@@ -1,0 +1,45 @@
+<!--pages/pics/pics.wxml-->
+<!-- 轮播图展示 -->
+<!-- <loading loadingState="{{loadingState}}" bindreload="reload" wx:if="{{loadingState != 1}}"></loading> -->
+<loading wx:if="{{loadingState != 1}}">
+    加载中...
+</loading>
+
+<view wx:else class='pageStyle'>
+  <view class="haibao">
+    <swiper indicator-dots="true" indicator-color='#FFC0CB' indicator-active-color='#d4237a' autoplay='true' circular='true' interval='5000' duration='500'>
+      <block wx:for="{{banners}}" wx:key="{{item}}">
+        <swiper-item>
+          <image class='imageBener' src="{{item.bannerimg}}" id='{{item.imgtype}}' bindtap='bannerimageClick' mode='scaleToFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
+  <block wx:for="{{imagetypelist}}">
+    <view class='listStyle' bindtap='listimageClick' id='{{item.imgtype}}'>
+      <view class='rowView'>
+        <view class='title'>{{item.title}}</view>
+        <view class='moreView'>查看更多></view>
+      </view>
+      <image class='imageItem' src="{{item.img}}" mode='widthFix'></image>
+    </view>
+  </block>
+  <view class='bottomView'></view>
+
+
+<view wx:if="{{isPlayingMusic}}">
+    <view class="musicView" bindtap="play">
+      <image src="../../static/image/music_icon.png" class="musicImg music_icon" />
+      <image src="../../static/image/music_play.png" class="music_play pauseImg" />
+    </view>
+  </view>
+  <view wx:else>
+    <view class="musicView" bindtap="play">
+      <image src="../../static/image/music_icon.png" class="musicImg" /> -->
+      <image src="../../static/image/music_play.png" class="music_play playImg" />
+    </view>
+  </view>
+
+</view>

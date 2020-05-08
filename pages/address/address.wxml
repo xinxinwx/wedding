@@ -1,0 +1,29 @@
+<!--pages/address/address.wxml-->
+<loading wx:if="{{loadingState != 1}}">
+    加载中...
+</loading>
+<view wx:else class="container">
+  <image src='/static/image/t1.png' class='t1'></image>
+  <view class="map">
+    <map id="map" longitude="{{longitude}}" enable-scroll="false" show-compass latitude="{{latitude}}" scale="18" markers="{{markers}}" bindmarkertap="markertap" show-location></map>
+  </view>
+  <view class="tel">
+    <view class="tel_he" wx:if="{{he_tel}}">
+      <view class="call" bindtap="callhe">
+        <image src="/static/image/he.png" width="100%" />
+      </view>
+      呼叫新郎
+    </view>
+    <view class="tel_she" wx:if="{{she_tel}}">
+      <view class="call" bindtap="callshe">
+        <image src="/static/image/she.png" width="100%" />
+      </view>
+      呼叫新娘
+    </view>
+  </view>
+  
+  <view class='copyright'>导航直接点击上面地图中的圆形绿色导航箭头，整体路线请点击下方"查看路线"</view>
+  <button  class='btn' bindtap='goNavigation'>查看路线</button>
+  <view class='copyright' wx:if="{{mainInfo.she_tel}}">Made With ❤ By {{mainInfo.he}} & {{mainInfo.she}}</view>
+  <view class='copyright'>{{name}}</view>
+</view>
